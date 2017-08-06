@@ -1,4 +1,4 @@
-$('.btn').click(function() {
+$('#loadCities').click(function() {
   var input = $('#input-id').val();
   var html = [];
   var filteredCitiesCount;
@@ -30,7 +30,19 @@ $('.btn').click(function() {
   })
   
   .always(() => {
-    $('#new-content').append('Total cities in ' + input + ' = '+ filteredCitiesCount)
+    $('#new-content').append('<div id="total">Total cities in ' + input + ' = '+ filteredCitiesCount + '</div>')
   });
   
 });
+
+$(function() {
+    $.getScript(
+        './ajax-scripts/ajax-script-1.js',
+        function() {
+            $("#alertCities").click(function(){
+                var alertValue = $('#total').text()
+                alertScript(alertValue)
+            })
+        }
+    )
+})
