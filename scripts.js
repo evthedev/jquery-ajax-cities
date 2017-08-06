@@ -37,7 +37,7 @@ $('#loadCities').click(function() {
 
 $(function() {
     $.getScript(
-        './ajax-scripts/ajax-script-1.js',
+        'https://evthedev.github.io/jquery-ajax-cities/ajax-scripts/ajax-script-1.js',
         function() {
             $("#alertCities").click(function(){
                 var alertValue = $('#total').text()
